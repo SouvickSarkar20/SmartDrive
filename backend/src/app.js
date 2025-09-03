@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import authRoutes from "./routes/authRoutes.js";
 import deliveryRoutes from "./routes/deliveryRoutes.js";
+import pathRoutes from "./routes/pathRoutes.js"
 
 const app = express();
 
@@ -12,5 +13,6 @@ app.get("/", (req, res) => res.send("🚀 AlgoDrive API Running"));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/delivery", deliveryRoutes);
+app.use("/api/path", pathRoutes); //
 
 export default app;
