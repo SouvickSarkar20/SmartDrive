@@ -8,7 +8,6 @@ import Dashboard from "./pages/Dashboard";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-
 function App() {
   return (
     <AuthProvider>
@@ -30,6 +29,14 @@ function App() {
             element={<h1 className="p-10">Welcome to AlgoDrive 🚀</h1>}
           />
         </Routes>
+        <Route
+          path="/route"
+          element={
+            <ProtectedRoute>
+              <RoutePlanner />
+            </ProtectedRoute>
+          }
+        />
       </Router>
     </AuthProvider>
   );
